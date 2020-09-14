@@ -1,0 +1,129 @@
+.footer-cta {
+    flex-direction: column;
+    padding: 9rem 0;
+    position: relative;
+    h1 { 
+        color: $white;
+        margin: 1rem 0 4rem 0;
+        
+        @include respond(phone) {
+            text-align: center;
+       }
+     }
+
+     button { color: $grey-dark-3; }
+
+     img { position: absolute; }
+     .squares-1 {
+         top: -3rem;
+         right: 4%;
+
+         @include respond(phone) {
+            width: 24%;
+         }
+     }
+
+     .squares-2 {
+         bottom: -3rem;
+         left: 4%;
+
+         @include respond(phone) {
+             width: 28%;
+        }
+     }
+}
+
+.footer {
+    width: 100vw;
+    @include basic-flex;
+    background: $grey-light-1;
+
+    &__container { 
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: space-between;
+        max-width: 120rem;
+        width: 100%;
+
+        @include respond(tab-port) {
+            grid-template-columns: repeat(3, 1fr);
+            justify-items: center;
+       }
+     }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        .paragraph-sm-bold { margin-bottom: .6rem; }
+
+        .paragraph-sm {
+            margin-top: 1.4rem;
+        }
+
+        h4 { margin-bottom: .8rem; }
+    }
+
+    &__top {
+        width: 100%;
+        @include respond(tab-port) {
+            grid-column: 1 / 4;
+            grid-row: 1 / 2;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            justify-items: center;
+       }
+       @include respond(phone) {
+        grid-template-columns: 1fr;
+        margin-bottom: 6rem;
+       }
+    }
+
+    &__newsletter {
+        margin-bottom: 4rem;
+
+        h4 { margin-bottom: 2rem;}
+
+        button {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            border: 1px solid $primary;
+        }
+    }
+
+    &__follow {
+        img { 
+            margin: 2rem 3rem 0 0; 
+            background: $grey-light-3;
+            transition: all .2s ease;
+        }
+
+        .twitter:hover { background: #1DA1F2; }
+        .facebook:hover { background: #4267B2; }
+        .instagram:hover { background: rgb(64,93,230);
+            background: linear-gradient(180deg, rgba(64,93,230,1) 0%, rgba(253,29,98,1) 50%, rgba(252,175,69,1) 100%); }
+        .dribbble:hover { background: #E94C88; }
+    }
+
+    &__input {
+        display: flex;
+    }
+    a { transition: all .2s ease; }
+    a:hover {
+        color: $primary-dark;
+    }
+}
+
+.copyright {
+    background: $grey-light-1;
+    width: 100vw;
+    @include basic-flex;
+    padding-bottom: 2rem;
+
+    img { width: 3.6rem; }
+    h4 { 
+        margin-left: .6rem;
+        margin-right: 1.4rem;
+    }
+}

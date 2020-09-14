@@ -1,0 +1,53 @@
+input {
+    background: $white;
+    border: 1px solid $grey-light-2;
+    padding: .8rem 2.4rem;
+    font-size: 1.6rem;
+    line-height: 3rem;
+    color: $grey-dark-2;
+    border-radius: .4rem;
+
+    &::placeholder {
+        font-size: 1.6rem;
+        color: $grey-light-2;
+    }
+
+    &:focus { border: 1px solid $primary; }
+}
+
+.input-newsletter {
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-right: -.2rem;
+
+    &:hover { border-right: none; }
+
+    @include respond(phone) {
+        width: 80%;
+    }
+}
+
+.input-checkbox { display: none; }
+
+.input-checkbox:checked + .checkbox img {
+    background: $primary-dark;
+}
+
+.checkbox {
+    @include basic-flex;
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-top: .4rem;
+    border: 1px solid $grey-light-2;
+    border-radius: .2rem;
+    cursor: pointer;
+
+    &:hover { border: 1px solid $primary; }
+
+    img {
+        width: 1.2rem;
+        height: 1.2rem;
+        border-radius: .2rem;
+    }
+}

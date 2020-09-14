@@ -1,0 +1,247 @@
+.home {
+    @include column-flex;
+    max-width: 120rem;
+    margin: auto;
+}
+
+.hero {
+    @include grid-col2;
+    margin-top: 4rem;
+    padding: $basic-padding;
+
+    @include respond(tab-land) {
+        grid-template-columns: 60%;
+        grid-template-rows: repeat(2, 50%);
+        justify-content: center;
+        justify-items: center;
+        text-align: center;
+    }
+
+    @include respond(tab-port) {
+        grid-template-columns: 90%;
+        grid-row-gap: 1.6rem;
+    }
+
+    @include respond(phone) {
+        grid-template-columns: 100%;
+        padding: 8rem 2rem;
+        margin-top: 1rem;
+    }
+
+    &__content {
+        grid-column: 1 / 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h1, h4, button {
+            opacity: 0;
+            animation: fade-in-up .6s ease .4s forwards;
+        }
+
+        h4 {
+            margin: 2rem 0 3rem 0;
+            line-height: 3rem;
+            color: $grey-dark-2;
+            animation-delay: .6s;
+        }
+
+        button { animation-delay: .8s; }
+
+        h1 span { color: $primary; }
+    }
+
+    &__img {
+        grid-column: 2 / 3;
+        display: flex;
+        opacity: 0;
+        animation: fade-in-up .6s ease .2s forwards;
+        animation-delay: 1s;
+        
+        @include respond(tab-land) {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+        }
+    }
+
+    &__anim { svg {max-width: 59rem;} }
+}
+
+.section { padding: $basic-padding; 
+    @include respond(phone) {
+        padding: 8rem 2rem;
+    }
+}
+
+ #background-grey {
+     width: 100vw;
+     background: linear-gradient(to top, $grey-light-1 0%, rgba(246, 247, 253, 0) 100%);
+ }
+
+.section-why {
+    @include column-flex;
+
+    &__title {
+        max-width: 80rem;
+        text-align: center;
+
+        @include respond(phone) {
+            text-align: start;
+        }
+    }
+
+    &__content {
+        margin-top: 4rem;
+        max-width: 114rem;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(22rem, 33.6rem));
+        justify-content: space-between;
+        grid-gap: 4rem;
+
+        @include respond(tab-port) {
+            grid-template-columns: repeat(2, minmax(20rem, 30rem));
+            max-width: 74rem;
+        }
+
+        @include respond(phone) {
+            grid-template-columns: 100%;
+            max-width: 74rem;
+        }
+
+        .animIcon {
+            width: 4.8rem;
+            height: 4.8rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .underline {
+            margin-bottom: 1.2rem;
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 3.2rem;
+                height: .1rem;
+                background: $primary;
+            }
+        }
+    }
+}
+
+.section-info {
+    @include grid-col2;
+    width: 100%;
+    max-width: 120rem;
+    align-items: center;
+    position: relative;
+
+    &__img { margin-left: -6rem;
+        
+        @include respond(tab-land) {
+            margin-left: 0;
+        }
+
+        img { max-width: 100%; }
+     }
+
+    &__content {
+        width: 100%;
+        max-width: 54.4rem;
+        
+        @include respond(tab-port) {
+            @include column-flex;
+            grid-row: 1 / 2;
+            max-width: 60rem;
+        }
+
+        p { margin: 2rem 0; }
+
+        button { 
+            display: flex; 
+            align-items: center;
+            img { margin-left: .6rem; }
+        }
+    }
+
+    .squares-red {
+        position: absolute;
+        top: 28%;
+        right: 1%;
+        @include respond(tab-port) {
+            top: 8%;
+            right: 10%;
+            width: 8%;
+        }
+    }
+
+    .squares-blue {
+        position: absolute;
+        top: 22%;
+        left: 0;
+        @include respond(tab-port) {
+            top: 8%;
+            left: 10%;
+            width: 10%;
+        }
+    }
+}
+
+#background-dark { 
+    @include basic-flex;
+    width: 100vw;
+    background: $grey-dark-3;
+    position: relative;
+
+    h2, p { color: $white; }
+    .btn-basic { color: $primary-dark; }
+}
+
+.section-FAQ {
+    @include column-flex;
+
+    h2 {text-align: center;}
+}
+
+.animatable {
+    opacity: 0;
+}
+.animate-in {
+    animation: fade-in-up .6s ease forwards;
+}
+.animate-out {
+    animation: fade-out-down .6s ease forwards;
+}
+
+@keyframes fade-in-up {
+    0% {
+		opacity: 0;
+		transform: translateY(3rem);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fade-out-down {
+    0% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateY(3rem);
+	}
+}
+
+@keyframes rotate {
+    to {
+      transform: rotate(360deg);
+    }
+  }

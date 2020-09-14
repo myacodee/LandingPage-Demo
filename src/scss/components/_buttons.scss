@@ -1,0 +1,44 @@
+.btn-primary {
+    padding: .8rem 2.4rem;
+    background: $primary;
+    border-radius: .4rem;
+    color: $white;
+    transition: all .2s ease;
+}
+
+.btn-primary:hover { background: $primary-dark; }
+
+.btn-outline {
+    padding: .8rem 2.4rem;
+    border: 1px solid $grey-light-2;
+    border-radius: .4rem;
+    color: $grey-dark-2;
+    margin-left: 3rem;
+    transition: all .2s ease;
+
+    @include respond(phone) {
+        margin-left: 2.4rem;
+    }
+}
+
+.btn-outline:hover { color: $primary-dark; }
+
+.btn-basic { color: $secondary; }
+
+.btn-basic-2 { color: $primary; }
+
+.btn-basic, .btn-basic-2 {
+    img {
+        transition: all .3s ease;
+    }
+}
+
+.btn-basic:hover img, .btn-basic-2:hover img { transform: translateX(.8rem); }
+
+.btn-modal {
+    @include respond(phone) {
+        padding: 1.2rem;
+        width: 36rem;
+        font-size: 1.8rem;
+    }
+}
